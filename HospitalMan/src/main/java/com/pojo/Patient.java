@@ -1,6 +1,5 @@
 package com.pojo;
 
-import java.util.Date;
 
 public class Patient {
 
@@ -11,33 +10,12 @@ public class Patient {
 	private String name;
 	private int age;
 	
-	private Date dateOfAdmission;
+	private String dateOfAdmission;
 	
 	private String typeOfBed;
 	private String address;
 	private String city;
 	private String state;
-	private boolean status;
-	
-	
-	public Patient(String ssnId, String name, int age, Date dateOfAdmission, String typeOfBed, String address,
-			String city, String state, boolean status) {
-		super();
-		this.ssnId = ssnId;
-		this.name = name;
-		this.age = age;
-		this.dateOfAdmission = dateOfAdmission;
-		this.typeOfBed = typeOfBed;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.status = status;
-	}
-
-
-	public Patient() {
-		
-	}
 
 
 	public int getId() {
@@ -80,12 +58,12 @@ public class Patient {
 	}
 
 
-	public Date getDateOfAdmission() {
+	public String getDateOfAdmission() {
 		return dateOfAdmission;
 	}
 
 
-	public void setDateOfAdmission(Date dateOfAdmission) {
+	public void setDateOfAdmission(String dateOfAdmission) {
 		this.dateOfAdmission = dateOfAdmission;
 	}
 
@@ -127,21 +105,6 @@ public class Patient {
 
 	public void setState(String state) {
 		this.state = state;
-	}
-
-
-	public boolean isStatus() {
-		return status;
-	}
-
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-	
-	
-	
-	
-	
+	}	
 	 
 }
