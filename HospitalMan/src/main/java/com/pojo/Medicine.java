@@ -4,17 +4,10 @@ package com.pojo;
 public class Medicine {
 	
 	private int id;
-	
 	private String name;
 	private int quantityAvaialable;
 	private double rate; // cost of the medicine
 	
-	public Medicine(String name, int quantityAvaialable, double rate) {
-		super();
-		this.name = name;
-		this.quantityAvaialable = quantityAvaialable;
-		this.rate = rate;
-	}
 
 	public int getId() {
 		return id;

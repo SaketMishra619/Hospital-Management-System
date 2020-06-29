@@ -89,7 +89,39 @@ public static boolean delete (Patient p) {
 		e.printStackTrace();
 	}
 	return flag;
+}
+
+public static List<Patient> viewpatients () {
+	
+	List<Patient> list = null;
+	Patient patient = null;
+	
+	try {
+		
+		list = new ArrayList<Patient>();
+		String sql = "SELECT * FROM patient";
+		connection = DBConnectionUtil.openConnection();
+		statement = connection.createStatement();
+		resultSet = statement.executeQuery(sql);
+		while(resultSet.next()) {
+			patient = new Patient();
+			patient.setId(resultSet.getInt(1));
+			patient.setSsnId(resultSet.getString(2));
+			patient.setName(resultSet.getString(3));
+			patient.setAge(resultSet.getInt(4));
+			patient.setDateOfAdmission(resultSet.getString(5));
+			patient.setTypeOfBed(resultSet.getString(6));
+			patient.setAddress(resultSet.getString(7));
+			patient.setCity(resultSet.getString(8));
+			patient.setState(resultSet.getString(9));
+			list.add(patient);
+		}
+	}catch(SQLException e) {
+		e.printStackTrace();
 	}
+	return list;
+}
+
 
 
 public static Patient getpatientbyssnid (Patient p) {
